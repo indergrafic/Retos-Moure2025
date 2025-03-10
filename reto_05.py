@@ -1,3 +1,6 @@
+''' Comprovacion de como cambian las bariables tanto
+por valor como por referencia'''
+
 def fun_valor(num1: int, num2: int):
     temp = num1
     num1 = num2
