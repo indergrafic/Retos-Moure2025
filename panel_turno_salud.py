@@ -15,7 +15,10 @@ def turno():
     consulta1: int = 0
     consulta2: int = 0
     while True:
-        persona = int(input("Indique su DNI(4 primeros numeros): "))
+        try:
+            persona = int(input("Indique su DNI(4 primeros numeros): "))
+        except:
+            continue
         if persona in listado:
             print(f'Usted ya esta en lista de espera, su codigo es {listado[persona]}')
         else:
@@ -47,9 +50,9 @@ def turno():
             continue
             
         """Se pulsara s para saber que se ha terminado la consulta y se pasara al proximo paciente"""
-        consulta1_vacia = input("Sala 1 en espera. -Pulsar s-")
-        consulta2_vacia = input("Sala 2 en espera. -Pulsar s-")
-        if consulta1_vacia == "s":
+        consulta_vacia = input("Sala vacia. -Pulsar 1/2: ")
+        #consulta2_vacia = input("Sala 2 vacia. -Pulsar s/n-")
+        if consulta_vacia == "1":
             consulta1 = 0
             try:
                 prim_clave = next(iter(listado))
@@ -57,7 +60,7 @@ def turno():
                 cod_paciente.pop(0)
             except:
                 continue
-        elif consulta2_vacia == "s":
+        elif consulta_vacia == "2":
             consulta2 = 0
             try:
                 prim_clave = next(iter(listado))
