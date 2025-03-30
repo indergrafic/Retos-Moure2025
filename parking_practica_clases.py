@@ -1,9 +1,9 @@
-class Parking:
+class Parking: 
+    num_plaza = ['A1', 'A2', 'A3', 'A4', 'A5', 'A7', 'A8']
     def __init__(self, modelo, matricula):
         self.modelo = modelo
         self.matricula = matricula
         self.matri_plaza = {}
-        self.num_plaza = ['A1', 'A2', 'A3', 'A4', 'A5', 'A7', 'A8']
 
     def entrada(self):
         if len(self.num_plaza) > 0:
@@ -26,6 +26,7 @@ class Parking:
 
     def registro_plazas(self):
         listado = self.matri_plaza
+
         for placa, zona in listado.items():
             print(f"El conche con matricula {placa}, se encuentra aparcado en {zona}")
 
